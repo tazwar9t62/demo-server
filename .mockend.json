@@ -8,64 +8,14 @@
     "body": { "string": {} },
     "post": { "belongsTo": "Post" }
   },
-  "studentlist": {
-    "students": [
-      {
-        "name": "タズワー ",
-        "id": 135434,
-        "schoolId": 987,
-        "attendance": true,
-        "comment": "良い学生"
-      },
-      {
-        "name": "サキブ",
-        "id": 1711854,
-        "schoolId": 987,
-        "attendance": true,
-        "comment": ""
-      },
-      {
-        "name": "ソネット",
-        "id": 16337,
-        "schoolId": 543,
-        "attendance": true,
-        "comment": ""
-      },
-      {
-        "name": "テスト",
-        "id": 1727,
-        "schoolId": 987,
-        "attendance": true,
-        "comment": ""
-      },
-      {
-        "name": "智之",
-        "id": 164474,
-        "schoolId": 987,
-        "attendance": true,
-        "comment": "テストコメント"
-      },
-      {
-        "name": "タズワー",
-        "id": 123434,
-        "schoolId": 987,
-        "attendance": true,
-        "comment": ""
-      },
-      {
-        "name": "サキフ",
-        "id": 6734667,
-        "schoolId": 687,
-        "attendance": true,
-        "comment": "良い学生"
-      },
-      {
-        "name": "ムラド",
-        "id": 654312,
-        "schoolId": 987,
-        "attendance": true,
-        "comment": "とても良い学生"
-      }
-    ]
+  "students": { "hasMany": "Student" },
+  "Student": {
+    "name": { "string": {} },
+    "age": { "integer": {} },
+    "school": { "belongsTo": "School" }
+  },
+  "School": {
+    "name": { "string": {} },
+    "students": { "hasMany": "Student" }
   }
 }
